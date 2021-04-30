@@ -10,6 +10,7 @@ import {setRegistrationsStep} from "../redux/actionCreators/userActions";
 import FirstStepRegistration from "../components/RegistrationPageComponents/FirstStepRegistration";
 import SecondStepRegistration from "../components/RegistrationPageComponents/SecondStepRegistration";
 import ThirdStepRegistration from "../components/RegistrationPageComponents/ThirdStepRegistration";
+import {Box} from "@material-ui/core";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -81,7 +82,7 @@ export default function HorizontalLabelPositionBelowStepper() {
                 ) : (
                     <div>
                         <Typography className={classes.instructions}>{getStepContent(activeStep)}</Typography>
-                        <div>
+                        <Box display={"flex"} justifyContent={"center"}>
                             <Button
                                 disabled={activeStep === 0}
                                 onClick={handleBack}
@@ -92,7 +93,7 @@ export default function HorizontalLabelPositionBelowStepper() {
                             <Button variant="contained" color="primary" onClick={handleNext}>
                                 {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
                             </Button>
-                        </div>
+                        </Box>
                     </div>
                 )}
             </div>
